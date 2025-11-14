@@ -4,15 +4,15 @@ This is the code for a production grade waitlist.
 
 ## Frontend
 
-Astro
-React
-TailwindCSS
+- Astro
+- React
+- TailwindCSS
 
 ## Backend
 
-Hono (Cloudflare)
-Drizzle ORM
+- Hono (Cloudflare)
+- Drizzle ORM
 
 ## Database
 
-Cloudflare D1
+- Cloudflare D1
