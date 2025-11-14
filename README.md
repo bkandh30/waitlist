@@ -6,6 +6,7 @@ This is the code for a production grade waitlist.
 
 Astro
 React
+TailwindCSS
 
 ## Backend
 
