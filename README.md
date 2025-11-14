@@ -13,6 +13,10 @@ This is the code for a production grade waitlist.
 - Hono (Cloudflare)
 - Drizzle ORM
 
+## Package Manage
+
+- Bun
+
 ## Database
 
 - Cloudflare D1
