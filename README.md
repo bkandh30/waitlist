@@ -11,3 +11,7 @@ React
 
 Hono (Cloudflare)
 Drizzle ORM
+
+## Database
+
+Cloudflare D1
