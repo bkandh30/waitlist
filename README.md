@@ -15,7 +15,7 @@ This is the code for a production grade waitlist.
 
 ## Package Manage
 
-- Bun
+- PNPM
 
 ## Database
 
