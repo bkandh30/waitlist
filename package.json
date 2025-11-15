@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "pnpm exec prettier . --write",
+    "format:check": "pnpm exec prettier . --check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -14,6 +16,9 @@
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
-    "daisyui": "^5.5.4"
+    "daisyui": "^5.5.4",
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.7.1"
   }
 }

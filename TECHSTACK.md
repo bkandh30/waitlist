@@ -28,11 +28,9 @@
 ## API Endpoints
 
 - GET /api/subscriber-count
-
   - Gets the total number of subscriber
 
 - POST /api/signup
-
   - Zod validation on email & save to DB
   - Clean addressing
   - Sentry error capture & alert
