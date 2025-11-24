@@ -1,0 +1,15 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="card bg-neutral h-full w-full">
+  <div class="card-body items-center p-6 text-center md:p-8">
+    <h2 class="card-title text-secondary">{title}</h2>
+    <p class="text-neutral-content/90 text-sm md:text-base">{description}</p>
+  </div>
+</div>
