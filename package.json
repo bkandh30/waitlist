@@ -9,7 +9,8 @@
     "astro": "astro",
     "format": "pnpm exec prettier . --write",
     "format:check": "pnpm exec prettier . --check",
-    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'"
+    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'",
+    "worker": "wrangler dev"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -21,7 +22,8 @@
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "wrangler": "^4.51.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.47.0",
