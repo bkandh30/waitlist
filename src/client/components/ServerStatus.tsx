@@ -6,7 +6,8 @@ export const ServerStatus = () => {
   useEffect(() => {
     fetch("/api/health")
       .then((res) => res.json())
-      .then((data) => setStatus(data));
+      .then((data) => setStatus(data))
+      .catch((err) => setStatus(`Error: ${err.message}`));
   }, []);
 
   return (
