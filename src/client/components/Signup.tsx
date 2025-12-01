@@ -1,18 +1,19 @@
-import { Mail } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 export const Signup = () => {
   return (
     <div className="join">
       <div>
-        <label className="input validator join-item">
+        <label className="input validator join-item input-lg">
           <Mail className="text-base-content" />
-          <input type="email" placeholder="mail@site.com" required />
+          <input type="email" placeholder="name@company.com" required />
         </label>
         <div className="validator-hint hidden">Enter valid email address</div>
       </div>
-      <button className="btn btn-neutral join-item text-neutral-content">
-        Join
+      <button className="btn btn-neutral join-item text-base-content btn-lg rounded-r-full">
+        Get Notified <ArrowRight className="text-base-content" size={20} />
       </button>
+      <br />
     </div>
   );
 };
