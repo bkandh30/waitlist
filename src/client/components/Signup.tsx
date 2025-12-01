@@ -6,7 +6,7 @@ export const Signup = () => {
       <div>
         <label className="input validator join-item input-lg">
           <Mail className="text-base-content" />
-          <input type="email" placeholder="name@company.com" required />
+          <input type="email" placeholder="name@brand.com" required />
         </label>
         <div className="validator-hint hidden">Enter valid email address</div>
       </div>
