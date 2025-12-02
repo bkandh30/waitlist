@@ -20,7 +20,7 @@ export const Navbar = () => {
         </a>
       </div>
       <div className="text-neutral-content flex-none">
-        <button className="btn btn-soft btn-accent text-neutral-content">
+        <button className="btn btn-soft btn-accent text-orange-200">
           <Globe size={14} />
           Global Mesh: {status}
         </button>
