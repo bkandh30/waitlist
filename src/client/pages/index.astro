@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import Hero from "../components/Hero.astro";
 import { Signup } from "../components/Signup";
 import Card from "../components/Card.astro";
+import { ShoppingBag, RefreshCcw, Users } from "lucide-react";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -20,15 +21,21 @@ import Card from "../components/Card.astro";
       <Card
         title="Multi-Storefront Routing"
         description="One URL sends US shoppers to Amazon and German shoppers to your EU store automatically."
-      />
+      >
+        <ShoppingBag slot="icon" size={32} />
+      </Card>
       <Card
         title="Zero Dead Ends"
         description="Viral video from a year ago? No problem. Update destinations instantly so you never lose revenue to 404s."
-      />
+      >
+        <RefreshCcw slot="icon" size={32} />
+      </Card>
       <Card
         title="Simplified Influencer Ops"
         description="Give partners one link. You control the backend routing. No more spreadsheets of regional URLs."
-      />
+      >
+        <Users slot="icon" size={32} />
+      </Card>
     </div>
   </div>
 </Layout>
