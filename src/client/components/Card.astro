@@ -8,16 +8,16 @@ const { title, description } = Astro.props;
 ---
 
 <div
-  class="card bg-neutral border-base-300/20 h-full w-full rounded-2xl border shadow-sm"
+  class="card bg-neutral h-full w-full rounded-2xl border border-white/10 shadow-sm"
 >
-  <div class="card-body items-center space-y-4 p-8 text-center md:p-10">
-    <div class="text-accent mb-2">
+  <div class="card-body items-center p-8 text-center md:p-10">
+    <div class="text-accent mb-3">
       <slot name="icon" />
     </div>
-    <h2 class="card-title text-accent text-xl leading-tight font-semibold">
+    <h2 class="card-title text-accent md:text-xl leading-tight font-semibold mb-1">
       {title}
     </h2>
-    <p class="text-base-content text-sm leading-relaxed md:text-base -mt-2">
+    <p class="text-base-content text-sm leading-relaxed md:text-base">
       {description}
     </p>
   </div>
