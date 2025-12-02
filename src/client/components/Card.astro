@@ -7,12 +7,18 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="card bg-neutral h-full w-full">
-  <div class="card-body items-center p-6 text-center md:p-8">
-    <div class="text-neutral-content mb-2">
+<div
+  class="card bg-neutral border-base-300/20 h-full w-full rounded-2xl border shadow-sm"
+>
+  <div class="card-body items-center space-y-4 p-8 text-center md:p-10">
+    <div class="text-accent mb-2">
       <slot name="icon" />
     </div>
-    <h2 class="card-title text-accent">{title}</h2>
-    <p class="text-base-content text-sm md:text-base">{description}</p>
+    <h2 class="card-title text-accent text-xl leading-tight font-semibold">
+      {title}
+    </h2>
+    <p class="text-base-content text-sm leading-relaxed md:text-base -mt-2">
+      {description}
+    </p>
   </div>
 </div>
