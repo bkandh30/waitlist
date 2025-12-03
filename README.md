@@ -43,3 +43,17 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 | `pnpm format`          | Format all the files using prettier              |
 | `pnpm format:check`    | Check the format of all the files using prettier |
+
+# Local Dev
+
+- copy the `.env.example` as `.env`
+- install dependencies with `pnpm install`
+- `pnpm run dev`
+
+# Deploying to Cloudflare
+
+- update the `wrangler.jsonc` with your env variables:
+  - POLICY_AUD
+  - CF_ACCESS_DOMAIN
+
+- `pnpm run deploy:staging` or `pnpm run deploy:prod`

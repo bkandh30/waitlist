@@ -9,7 +9,9 @@
   "env": {
     "staging": {
       "vars": {
-        "ENVIRONMENT": "staging"
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://bhavya-kandhari-eng.cloudflareaccess.com",
+        "POLICY_AUD": "18cc13fecaad6b57eff714c393134f1f28ce68f9b0919835054ccb5246c21ca3"
       }
     },
     "production": {

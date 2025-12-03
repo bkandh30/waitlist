@@ -1,6 +1,8 @@
 import { Hono } from "hono";
+import { accessAuth } from "./middleware/auth";
+
 const app = new Hono();
 
-app.get("/api/health", (c) => c.json("Offline"));
+app.use(accessAuth).get("/api/health", (c) => c.json("Offline"));
 
 export default app;
