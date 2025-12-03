@@ -14,7 +14,9 @@ const { title, description } = Astro.props;
     <div class="text-accent mb-3">
       <slot name="icon" />
     </div>
-    <h2 class="card-title text-accent md:text-xl leading-tight font-semibold mb-1">
+    <h2
+      class="card-title text-accent mb-1 leading-tight font-semibold md:text-xl"
+    >
       {title}
     </h2>
     <p class="text-base-content text-sm leading-relaxed md:text-base">

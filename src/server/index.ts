@@ -1,6 +1,6 @@
-import { Hono } from 'hono'
-const app = new Hono()
+import { Hono } from "hono";
+const app = new Hono();
 
-app.get('/api/health', (c) => c.json('Offline'))
+app.get("/api/health", (c) => c.json("Offline"));
 
-export default app
+export default app;
