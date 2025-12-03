@@ -4,14 +4,18 @@
   "version": "0.0.1",
   "scripts": {
     "client": "astro dev",
-    "build": "astro build",
+    "build:client": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "pnpm exec prettier . --write",
     "format:check": "pnpm exec prettier . --check",
     "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'",
     "worker": "wrangler dev",
-    "dev": "concurrently \"pnpm run client\" \"pnpm run worker\""
+    "dev": "concurrently \"pnpm run client\" \"pnpm run worker\"",
+    "dryrun:staging": "pnpm run build:client && wrangler deploy --dry-run --env staging",
+    "dryrun:prod": "pnpm run build:client && wrangler deploy --dry-run --env production",
+    "deploy:staging": "pnpm run build:client && wrangler deploy --env staging",
+    "deploy:prod": "pnpm run build:client && wrangler deploy --env production"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
