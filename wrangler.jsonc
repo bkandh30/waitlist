@@ -1,38 +1,37 @@
 {
-	"name": "waitlist",
-	"compatibility_date": "2025-11-25",
-	"main": "src/server/index.ts",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "waitlist_local_db",
-			"database_id": "123"
-		}
-	],
-	"env": {
-		"staging": {
-			"vars": {
-				"ENVIRONMENT": "staging",
-				"CF_ACCESS_DOMAIN": "https://bhavya-kandhari-eng.cloudflareaccess.com",
-				"POLICY_AUD": "18cc13fecaad6b57eff714c393134f1f28ce68f9b0919835054ccb5246c21ca3"
-			},
-			"d1_databases": [
-				{
-					"binding": "DB",
-					"database_name": "waitlist_staging_db",
-					"database_id": "c2847147-9ca7-4efe-b959-9f383202d8ac"
-				}
-			]
-		},
-		"production": {
-			"vars": {
-				"ENVIRONMENT": "production"
-			}
-		}
-	},
-	
+  "name": "waitlist",
+  "compatibility_date": "2025-11-25",
+  "main": "src/server/index.ts",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "waitlist_local_db",
+      "database_id": "123"
+    }
+  ],
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://bhavya-kandhari-eng.cloudflareaccess.com",
+        "POLICY_AUD": "18cc13fecaad6b57eff714c393134f1f28ce68f9b0919835054ccb5246c21ca3"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "waitlist_staging_db",
+          "database_id": "c2847147-9ca7-4efe-b959-9f383202d8ac"
+        }
+      ]
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
 }
