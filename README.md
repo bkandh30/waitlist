@@ -13,7 +13,7 @@
 
 **A reusable, scalable waitlist solution designed to validate SaaS ideas and capture early adopters.**
 
-[Project Outline](./OUTLINE.md) · [Tech Stack Details](./TECHSTACK.md) · [Cloudflare Setup](./CLOUDFLARE.md)
+[Project Outline](./OUTLINE.md) · [Tech Stack Details](./TECHSTACK.md) · [Cloudflare Services](./CLOUDFLARE.md)
 
 </div>
 
@@ -77,7 +77,7 @@ The motivation behind this project is to create a reusable waitlist foundation t
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/waitlist.git
+   git clone https://github.com/bkandh30/waitlist.git
    cd waitlist
    ```
 
@@ -140,5 +140,3 @@ pnpm deploy:staging
 # Deploy to production
 pnpm deploy:prod
 ```
-
-> For detailed Cloudflare configuration, see [CLOUDFLARE.md](./CLOUDFLARE.md)
