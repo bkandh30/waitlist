@@ -6,6 +6,13 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "waitlist_local_db",
+			"database_id": "123"
+		}
+	],
 	"env": {
 		"staging": {
 			"vars": {
