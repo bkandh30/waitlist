@@ -2,6 +2,11 @@
   "name": "waitlist",
   "type": "module",
   "version": "0.0.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
+  },
   "scripts": {
     "client": "astro dev",
     "build:client": "astro build",
@@ -45,6 +50,7 @@
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.0.1",
     "@typescript-eslint/parser": "^8.49.0",
+    "@vitest/coverage-v8": "4.0.15",
     "better-sqlite3": "^12.5.0",
     "daisyui": "^5.5.13",
     "drizzle-kit": "^0.31.8",
