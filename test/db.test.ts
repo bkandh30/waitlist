@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { getTestDb } from "./get-test-db";
 import { subscribers } from "../src/server/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, count } from "drizzle-orm";
 
 describe("Database", () => {
   it("should connect to test database", () => {
@@ -10,11 +10,29 @@ describe("Database", () => {
   });
 });
 
-describe("Subscribers", () => {
-  beforeEach(async () => {
-    // Clean up subscribers table before each test
+describe("Seeded Data", () => {
+  it("should have seeded subscribers", async () => {
     const db = getTestDb();
-    await db.delete(subscribers);
+    const [result] = await db.select({ count: count() }).from(subscribers);
+    expect(result.count).toBeGreaterThanOrEqual(10);
+  });
+
+  it("should have valid email format in seeded data", async () => {
+    const db = getTestDb();
+    const allSubscribers = await db.select().from(subscribers);
+
+    allSubscribers.forEach((sub) => {
+      expect(sub.email).toMatch(/.+@.+\..+/);
+    });
+  });
+});
+
+describe("Subscribers CRUD", () => {
+  const testEmail = "crud-test@mail.com";
+
+  beforeEach(async () => {
+    const db = getTestDb();
+    await db.delete(subscribers).where(eq(subscribers.email, testEmail));
   });
 
   it("should insert a subscriber", async () => {
@@ -23,14 +41,14 @@ describe("Subscribers", () => {
     const [result] = await db
       .insert(subscribers)
       .values({
-        email: "johndoe@mail.com",
+        email: testEmail,
         trafficSource: "organic",
         device: "mobile",
       })
       .returning();
 
     expect(result).toBeDefined();
-    expect(result.email).toBe("johndoe@mail.com");
+    expect(result.email).toBe(testEmail);
     expect(result.trafficSource).toBe("organic");
     expect(result.device).toBe("mobile");
   });
@@ -39,12 +57,12 @@ describe("Subscribers", () => {
     const db = getTestDb();
 
     await db.insert(subscribers).values({
-      email: "duplicate@mail.com",
+      email: testEmail,
     });
 
     await expect(
       db.insert(subscribers).values({
-        email: "duplicate@mail.com",
+        email: testEmail,
       }),
     ).rejects.toThrow();
   });
@@ -53,31 +71,31 @@ describe("Subscribers", () => {
     const db = getTestDb();
 
     await db.insert(subscribers).values({
-      email: "find@mail.com",
+      email: testEmail,
     });
 
     const [found] = await db
       .select()
       .from(subscribers)
-      .where(eq(subscribers.email, "find@mail.com"));
+      .where(eq(subscribers.email, testEmail));
 
     expect(found).toBeDefined();
-    expect(found.email).toBe("find@mail.com");
+    expect(found.email).toBe(testEmail);
   });
 
   it("should delete a subscriber", async () => {
     const db = getTestDb();
 
     await db.insert(subscribers).values({
-      email: "delete@mail.com",
+      email: testEmail,
     });
 
-    await db.delete(subscribers).where(eq(subscribers.email, "delete@mail.com"));
+    await db.delete(subscribers).where(eq(subscribers.email, testEmail));
 
     const [found] = await db
       .select()
       .from(subscribers)
-      .where(eq(subscribers.email, "delete@mail.com"));
+      .where(eq(subscribers.email, testEmail));
 
     expect(found).toBeUndefined();
   });
