@@ -18,7 +18,10 @@
     "deploy:prod": "pnpm run build:client && wrangler deploy --env production",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply waitlist_local_db --local",
-    "db:migrate:staging": "wrangler d1 migrations apply waitlist_staging_db --remote --env staging"
+    "db:migrate:staging": "wrangler d1 migrations apply waitlist_staging_db --remote --env staging",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
